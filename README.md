@@ -11,7 +11,7 @@ Simply drop in MATextFieldCell.swift into your project and you're ready to go!
 
 **Example**
 
-Create three MATextFieldCells, providing the appropriate type and action values conveniently at init-time, and let us do all the hard work. Provided those two pieces of information, we do all the heavy lifting and customize the keyboard types, data domains, placeholders, return key types and/or add toolbars for numeric keyboards, and entry formatting for the most commonly used types of form fields. Then pass in a closure as the action block to be handled when users hit the appropriate next/done/return buttons, and filling out the form will be a quick and user-friendly experience and you don't have to muck around writing all of the delegate and keyboard customization code that bloats your view controllers.
+Create three MATextFieldCells, providing the appropriate type and action values conveniently at init-time, and let us do all the hard work. Provided those two pieces of information, we do all the heavy lifting and customize the keyboard types, data domains, placeholders, return key types and/or add toolbars for numeric keyboards, and entry formatting for the most commonly used types of form fields. Then pass in a closure as the action block to be handled when users hit the appropriate next/done/return buttons, and filling out the form will be a quick, intuitive, and user-friendly experience and you don't have to muck around writing all of the delegate and keyboard customization code that bloats your view controllers.
 
 ```js
 let firstNameCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Name, action: MATextFieldActionType.Next)
@@ -49,7 +49,13 @@ yourCell.textField. // customize to your heart's content
 ```
 
 
-MATextFieldType and Standard Settings
+Add just a few more lines with more of the provided options, and you have a robust and user-friendly form that will fit almost all of the most common form types:
+
+![demo](Screenshots/full_demo.gif)
+
+
+
+MATextFieldTypes and Standard Settings
 =====
 
 **.Default**
