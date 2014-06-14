@@ -88,7 +88,7 @@ class ExampleFormTableViewController: UITableViewController {
             return
         }
         
-        blankCell.textField.placeholder = "Additional info (optional"
+        blankCell.textField.placeholder = "Additional info (optional)"
         
         firstSectionCells = [firstNameCell, lastNameCell, phoneCell, emailCell]
         secondSectionCells = [streetCell, cityCell, stateCell, zipCell]
