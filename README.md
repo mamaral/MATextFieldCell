@@ -7,6 +7,10 @@ MATextFieldCell is a drop-in subclass of UITableViewCell, written in Swift, used
 Usage
 =====
 
+Simply drop in MATextFieldCell.swift into your project and you're ready to go!
+
+**Example**
+
 Create three MATextFieldCells, providing the appropriate type and action values conveniently at init-time, and let us do all the hard work. Provided those two pieces of information, we do all the heavy lifting and customize the keyboard types, data domains, placeholders, return key types and/or add toolbars for numeric keyboards, and entry formatting for the most commonly used types of form fields. Then pass in a closure as the action block to be handled when users hit the appropriate next/done/return buttons.
 
 ```js
