@@ -45,65 +45,65 @@ yourCell.textField. // customize to your heart's content
 ```
 
 
-Field Types and Standard Settings
+MATextFieldType and Standard Settings
 =====
 
-**Default**
+**.Default**
   - auto-capitalize new sentences
   - auto-correction on
   - default keyboard
   
-**Name**
+**.Name**
   - auto-capitalize all words
   - auto-correction off
   - default keyboard
   
-**Phone**
+**.Phone**
   - number pad keyboard
   - automatically adds "Phone" placeholder
   - auto-formats text following format: (xxx) xxx-xxxx
   - adds toolbar to keyboard for action button
   
-**Email**
+**.Email**
   - auto-capitalize off
   - auto-correction off
   - email keyboard
   - automatically adds "Email" placeholder
   
-**Address**
+**.Address**
   - auto-capitalize all words
   - auto-correction on
   - default keyboard
   
-**State Abbreviation**
+**.StateAbbr**
   - auto-capitalize all characters
   - auto-correction off
   - default keyboard
   - 2 character limit
   - automatically adds "State" placeholder
   
-**ZIP Code**
+**.ZIP**
   - number pad keyboard
   - 5 digit limit
   - automatically adds "ZIP" placeholder
   
-**Number**
+**.Number**
   - number pad keyboard
   
-**Decimal**
+**.Decimal**
   - decimal pad keyboard
 
   
-Field Actions
+MATextFieldActionTypes
 =====
 
-**None**
+**.None**
   - does not create action bar/button, and uses default return key type for keyboard. Hitting 'return' on the keyboard does nothing.
   
-**Next**
+**.Next**
   - if the field type requires a numeric keyboard and therefore has no 'return key', a toolbar is created and added as an input accessory view to the keyboard with "Next" as the title. You'll want to be sure you also implement the expected action (switch which textfield is the firstResponder) inside the actionBlock property as shown above.
   - if the field type has a keyboard that includes a 'return key', the return key type is set to "Next". You'll want to be sure you also implement the expected action (switch which textfield is the firstResponder) inside the actionBlock property as shown above.
 
-**Done**
+**.Done**
   - if the field type requires a numeric keyboard and therefore has no 'return key', a toolbar is created and added as an input accessory view to the keyboard with "Done" as the title. You'll want to be sure you also implement the expected action (resign the appropriate first responder) inside the actionBlock property as shown above.
   - if the field type has a keyboard that includes a 'return key', the return key type is set to "Done". You'll want to be sure you also implement the expected action (resign the appropriate first responder) inside the actionBlock property as shown above.
