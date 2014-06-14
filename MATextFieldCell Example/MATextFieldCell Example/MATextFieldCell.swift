@@ -8,7 +8,7 @@
 import UIKit
 
 enum MATextFieldType: Int {
-    case Default = 0, Name, Phone, Email, Address, StateAbbr, Zip, Number, Decimal
+    case Default = 0, Name, Phone, Email, Address, StateAbbr, ZIP, Number, Decimal
 }
 
 enum MATextFieldActionType: Int {
@@ -83,11 +83,11 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = .Default
             self.textField.placeholder = "State"
-        case .Zip:
+        case .ZIP:
             self.textField.autocapitalizationType = .None
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = .NumberPad
-            self.textField.placeholder = "Zip"
+            self.textField.placeholder = "ZIP"
             requiresToolbar = true
         case .Number:
             self.textField.autocapitalizationType = .None
@@ -153,7 +153,7 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
             return countElements(resultString) < 3
             
         // the zip cell should only allow 5 characters - TODO: allow for hyphenated zips
-        case .Zip:
+        case .ZIP:
             let resultString: String = textField.text.bridgeToObjectiveC().stringByReplacingCharactersInRange(range, withString:string)
             return countElements(resultString) < 6
             
