@@ -16,7 +16,7 @@ class ExampleFormTableViewController: UITableViewController {
     let streetCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Address, action: MATextFieldActionType.Next)
     let cityCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Default, action: MATextFieldActionType.Next)
     let stateCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.StateAbbr, action: MATextFieldActionType.Next)
-    let zipCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Zip, action: MATextFieldActionType.Done)
+    let zipCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.ZIP, action: MATextFieldActionType.Done)
     let blankCell: MATextFieldCell = MATextFieldCell(type: nil, action: nil)
     var firstSectionCells = []
     var secondSectionCells = []
@@ -39,7 +39,8 @@ class ExampleFormTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        firstNameCell.textField.becomeFirstResponder()
+        // optionally pop up the keyboard immediately
+//        firstNameCell.textField.becomeFirstResponder()
     }
     
     func generateCells() {
@@ -86,6 +87,8 @@ class ExampleFormTableViewController: UITableViewController {
             self.zipCell.textField.resignFirstResponder()
             return
         }
+        
+        blankCell.textField.placeholder = "Additional info (optional"
         
         firstSectionCells = [firstNameCell, lastNameCell, phoneCell, emailCell]
         secondSectionCells = [streetCell, cityCell, stateCell, zipCell]

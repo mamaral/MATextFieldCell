@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         
-        let formViewController: ExampleFormTableViewController = ExampleFormTableViewController(style: .Grouped)
-        let navigationController: UINavigationController = UINavigationController(rootViewController: formViewController)
+        let mainViewController: OptionsViewController = OptionsViewController()
+        let navigationController: UINavigationController = UINavigationController(rootViewController: mainViewController)
         self.window!.rootViewController = navigationController
         
         return true
