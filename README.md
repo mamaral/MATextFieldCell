@@ -98,8 +98,8 @@ Field Actions
 =====
 
 **None**
-  - does not create action bar/button, and uses default return key type for keyboard
-  - 
+  - does not create action bar/button, and uses default return key type for keyboard. Hitting 'return' on the keyboard does nothing.
+  
 **Next**
   - if the field type requires a numeric keyboard and therefore has no 'return key', a toolbar is created and added as an input accessory view to the keyboard with "Next" as the title. You'll want to be sure you also implement the expected action (switch which textfield is the firstResponder) inside the actionBlock property as shown above.
   - if the field type has a keyboard that includes a 'return key', the return key type is set to "Next". You'll want to be sure you also implement the expected action (switch which textfield is the firstResponder) inside the actionBlock property as shown above.
