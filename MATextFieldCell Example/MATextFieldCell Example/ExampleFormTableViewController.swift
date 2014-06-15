@@ -20,6 +20,7 @@ class ExampleFormTableViewController: UITableViewController {
     let stateCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.StateAbbr, action: MATextFieldActionType.Next)
     let zipCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.ZIP, action: MATextFieldActionType.Done)
     let blankCell: MATextFieldCell = MATextFieldCell(type: nil, action: nil)
+    let nonEditableCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.NonEditable, action: nil)
     var firstSectionCells = []
     var secondSectionCells = []
     var thirdSectionCells = []
@@ -102,10 +103,11 @@ class ExampleFormTableViewController: UITableViewController {
         }
         
         blankCell.textField.placeholder = "Additional info (optional)"
+        nonEditableCell.textField.placeholder = "Non-editable content"
         
         firstSectionCells = [firstNameCell, lastNameCell, phoneCell, emailCell, urlCell, passwordCell]
         secondSectionCells = [streetCell, cityCell, stateCell, zipCell]
-        thirdSectionCells = [blankCell]
+        thirdSectionCells = [nonEditableCell, blankCell]
     }
 
     // #pragma mark - Table view data source
