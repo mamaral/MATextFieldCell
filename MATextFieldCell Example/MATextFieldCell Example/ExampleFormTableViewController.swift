@@ -13,6 +13,7 @@ class ExampleFormTableViewController: UITableViewController {
     let lastNameCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Name, action: MATextFieldActionType.Next)
     let phoneCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Phone, action: MATextFieldActionType.Next)
     let emailCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Email, action: MATextFieldActionType.Next)
+    let urlCell:  MATextFieldCell = MATextFieldCell(type: MATextFieldType.URL, action: MATextFieldActionType.Next)
     let passwordCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Password, action: MATextFieldActionType.Next)
     let streetCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Address, action: MATextFieldActionType.Next)
     let cityCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Default, action: MATextFieldActionType.Next)
@@ -63,6 +64,12 @@ class ExampleFormTableViewController: UITableViewController {
         }
         
         emailCell.actionBlock = {
+            self.urlCell.textField.becomeFirstResponder()
+            return
+        }
+        
+        urlCell.textField.placeholder = "Website"
+        urlCell.actionBlock = {
             self.passwordCell.textField.becomeFirstResponder()
             return
         }
@@ -96,7 +103,7 @@ class ExampleFormTableViewController: UITableViewController {
         
         blankCell.textField.placeholder = "Additional info (optional)"
         
-        firstSectionCells = [firstNameCell, lastNameCell, phoneCell, emailCell, passwordCell]
+        firstSectionCells = [firstNameCell, lastNameCell, phoneCell, emailCell, urlCell, passwordCell]
         secondSectionCells = [streetCell, cityCell, stateCell, zipCell]
         thirdSectionCells = [blankCell]
     }
