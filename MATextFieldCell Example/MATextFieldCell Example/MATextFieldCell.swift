@@ -110,7 +110,7 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = UIKeyboardType.URL
         case .NonEditable:
-            self.textField.userInteractionEnabled = false
+            self.textField.enabled = false
         }
         
         // if any of the fields require a toolbar, set up the toolbar with the appropriate title,
