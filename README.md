@@ -109,6 +109,12 @@ MATextFieldTypes and Standard Settings
   - default keyboard
   - secure text entry (characters are obfuscated)
   
+**.URL**
+  - auto-capitalize off
+  - auto-correction off
+  - URL keyboard
+
+
 MATextFieldActionTypes
 =====
 
