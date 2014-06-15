@@ -103,6 +103,11 @@ MATextFieldTypes and Standard Settings
 **.Decimal**
   - decimal pad keyboard
 
+**.Password**
+  - auto-capitalize off
+  - auto-correction off
+  - default keyboard
+  - secure text entry (characters are obfuscated)
   
 MATextFieldActionTypes
 =====
