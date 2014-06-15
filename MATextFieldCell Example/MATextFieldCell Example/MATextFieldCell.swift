@@ -8,7 +8,7 @@
 import UIKit
 
 enum MATextFieldType: Int {
-    case Default = 0, Name, Phone, Email, Address, StateAbbr, ZIP, Number, Decimal
+    case Default = 0, Name, Phone, Email, Address, StateAbbr, ZIP, Number, Decimal, Password
 }
 
 enum MATextFieldActionType: Int {
@@ -99,6 +99,12 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = .DecimalPad
             requiresToolbar = true
+        case .Password:
+            self.textField.autocapitalizationType = .None
+            self.textField.autocorrectionType = .No
+            self.textField.keyboardType = .Default
+            self.textField.secureTextEntry = true
+            self.textField.placeholder = "Password"
         }
         
         // if any of the fields require a toolbar, set up the toolbar with the appropriate title,
