@@ -114,6 +114,8 @@ MATextFieldTypes and Standard Settings
   - auto-correction off
   - URL keyboard
 
+**.NonEditable**
+  - disable the textfield - for display/informational purposes
 
 MATextFieldActionTypes
 =====
