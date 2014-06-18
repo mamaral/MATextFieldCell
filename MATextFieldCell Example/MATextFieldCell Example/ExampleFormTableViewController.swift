@@ -21,10 +21,10 @@ class ExampleFormTableViewController: UITableViewController {
     let zipCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.ZIP, action: MATextFieldActionType.Done)
     let blankCell: MATextFieldCell = MATextFieldCell(type: nil, action: nil)
     let nonEditableCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.NonEditable, action: nil)
-    var firstSectionCells = []
-    var secondSectionCells = []
-    var thirdSectionCells = []
-    let sectionCount: Int = 3
+    var sections: MATextFieldCell[][] = [] // an array of MATextFieldCell arrays
+    var firstSectionCells: MATextFieldCell[] = [] // an array of the MATextFieldCells for the first section
+    var secondSectionCells: MATextFieldCell[] = []
+    var thirdSectionCells: MATextFieldCell[] = []
     
     init(style: UITableViewStyle) {
         super.init(style: style)
@@ -108,40 +108,23 @@ class ExampleFormTableViewController: UITableViewController {
         firstSectionCells = [firstNameCell, lastNameCell, phoneCell, emailCell, urlCell, passwordCell]
         secondSectionCells = [streetCell, cityCell, stateCell, zipCell]
         thirdSectionCells = [nonEditableCell, blankCell]
+        sections = [firstSectionCells, secondSectionCells, thirdSectionCells]
     }
 
     // #pragma mark - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
-        return sectionCount
+        return sections.count
     }
 
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return firstSectionCells.count
-        }
-        else if section == 1 {
-            return secondSectionCells.count
-        }
-        else if section == 2 {
-            return thirdSectionCells.count
-        }
-        else {
-            return 0
-        }
+        return sections[section].count
     }
 
     
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-        if indexPath!.section == 0 {
-            return firstSectionCells[indexPath!.row] as MATextFieldCell
-        }
-        else if indexPath!.section == 1 {
-            return secondSectionCells[indexPath!.row] as MATextFieldCell
-        }
-        else {
-            return thirdSectionCells[indexPath!.row] as MATextFieldCell
-        }
+        let cellsForSection = sections[indexPath!.section]
+        return cellsForSection[indexPath!.row]
     }
 
 }
