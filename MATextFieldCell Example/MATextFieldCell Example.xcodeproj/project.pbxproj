@@ -82,11 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				27961C13194BF68F0098D263 /* AppDelegate.swift */,
-				279E9C6F194C883700B6F77C /* OptionsViewController.swift */,
-				279E9C71194C8CAA00B6F77C /* ShortFormExampleTableViewController.swift */,
-				279E9C73194C8DA300B6F77C /* NumericFormExampleTableViewController.swift */,
-				27961C2B194BF6B70098D263 /* ExampleFormTableViewController.swift */,
-				27961C2D194BF6CE0098D263 /* MATextFieldCell.swift */,
+				27C16F3B1951522700CFFA4D /* View Controllers */,
+				27C16F3C1951524200CFFA4D /* Views */,
 				27961C15194BF6900098D263 /* Images.xcassets */,
 				27961C11194BF68F0098D263 /* Supporting Files */,
 			);
@@ -116,6 +113,25 @@
 				27961C20194BF6900098D263 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27C16F3B1951522700CFFA4D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				279E9C6F194C883700B6F77C /* OptionsViewController.swift */,
+				279E9C71194C8CAA00B6F77C /* ShortFormExampleTableViewController.swift */,
+				279E9C73194C8DA300B6F77C /* NumericFormExampleTableViewController.swift */,
+				27961C2B194BF6B70098D263 /* ExampleFormTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		27C16F3C1951524200CFFA4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27961C2D194BF6CE0098D263 /* MATextFieldCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
