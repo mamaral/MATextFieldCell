@@ -35,11 +35,13 @@ class NumericFormExampleTableViewController: UITableViewController {
     }
     
     func generateCells() {
+        phoneCell.textField.placeholder = "Phone"
         phoneCell.actionBlock = {
             self.ZIPCell.textField.becomeFirstResponder()
             return
         }
         
+        ZIPCell.textField.placeholder = "ZIP"
         ZIPCell.actionBlock = {
             self.numberCell.textField.becomeFirstResponder()
             return

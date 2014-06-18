@@ -59,11 +59,13 @@ class ExampleFormTableViewController: UITableViewController {
             return
         }
         
+        phoneCell.textField.placeholder = "Phone"
         phoneCell.actionBlock = {
             self.emailCell.textField.becomeFirstResponder()
             return
         }
         
+        emailCell.textField.placeholder = "Email"
         emailCell.actionBlock = {
             self.urlCell.textField.becomeFirstResponder()
             return
@@ -75,6 +77,7 @@ class ExampleFormTableViewController: UITableViewController {
             return
         }
         
+        passwordCell.textField.placeholder = "Password"
         passwordCell.actionBlock = {
             self.streetCell.textField.becomeFirstResponder()
             return
@@ -92,11 +95,13 @@ class ExampleFormTableViewController: UITableViewController {
             return
         }
         
+        stateCell.textField.placeholder = "State"
         stateCell.actionBlock = {
             self.zipCell.textField.becomeFirstResponder()
             return
         }
         
+        zipCell.textField.placeholder = "ZIP"
         zipCell.actionBlock = {
             self.zipCell.textField.resignFirstResponder()
             return

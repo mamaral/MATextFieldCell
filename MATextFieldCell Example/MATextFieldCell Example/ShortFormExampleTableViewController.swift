@@ -46,6 +46,7 @@ class ShortFormExampleTableViewController: UITableViewController {
             return
         }
         
+        phoneCell.textField.placeholder = "Phone"
         phoneCell.actionBlock = {
             self.phoneCell.textField.resignFirstResponder()
             return
