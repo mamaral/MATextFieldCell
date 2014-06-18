@@ -30,6 +30,7 @@ lastNameCell.actionBlock = {
   return
 }
 
+phoneCell.textField.placeHolder = "Phone"
 phoneCell.actionBlock = {
   phoneCell.textField.resignFirstResponder()
   return
@@ -70,7 +71,6 @@ MATextFieldTypes and Standard Settings
   
 **.Phone**
   - number pad keyboard
-  - automatically adds "Phone" placeholder
   - auto-formats text following format: (xxx) xxx-xxxx
   - adds toolbar to keyboard for action button
   
@@ -78,7 +78,6 @@ MATextFieldTypes and Standard Settings
   - auto-capitalize off
   - auto-correction off
   - email keyboard
-  - automatically adds "Email" placeholder
   
 **.Address**
   - auto-capitalize all words
@@ -90,12 +89,10 @@ MATextFieldTypes and Standard Settings
   - auto-correction off
   - default keyboard
   - 2 character limit
-  - automatically adds "State" placeholder
   
 **.ZIP**
   - number pad keyboard
   - 5 digit limit
-  - automatically adds "ZIP" placeholder
   
 **.Number**
   - number pad keyboard
