@@ -66,14 +66,12 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
             self.textField.autocapitalizationType = .None
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = .NumberPad
-            self.textField.placeholder = "Phone"
             self.textField.addTarget(self, action: "formatPhoneNumber", forControlEvents: .EditingChanged)
             requiresToolbar = true
         case .Email:
             self.textField.autocapitalizationType = .None
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = .EmailAddress
-            self.textField.placeholder = "Email"
         case .Address:
             self.textField.autocapitalizationType = .Words
             self.textField.autocorrectionType = .Yes
@@ -82,12 +80,10 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
             self.textField.autocapitalizationType = .AllCharacters
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = .Default
-            self.textField.placeholder = "State"
         case .ZIP:
             self.textField.autocapitalizationType = .None
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = .NumberPad
-            self.textField.placeholder = "ZIP"
             requiresToolbar = true
         case .Number:
             self.textField.autocapitalizationType = .None
@@ -104,7 +100,6 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
             self.textField.autocorrectionType = .No
             self.textField.keyboardType = .Default
             self.textField.secureTextEntry = true
-            self.textField.placeholder = "Password"
         case .URL:
             self.textField.autocapitalizationType = .None
             self.textField.autocorrectionType = .No
