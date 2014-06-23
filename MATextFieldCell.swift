@@ -173,7 +173,7 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
             let oldCount = countElements(oldString)
             let newCount = countElements(resultString)
             shouldAttemptFormat = newCount > oldCount
-            return newCount < 15
+            return true//newCount < 15
             
         // otherwise we should just let them continue
         default:
@@ -215,6 +215,9 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
         }
         else if strippedValue.length <= 10 {
             formattedString = "(" + strippedValue.substringToIndex(3) + ") " + strippedValue.substringWithRange(NSMakeRange(3, 3)) + "-" + strippedValue.substringFromIndex(6)
+        }
+        else if strippedValue.length >= 11 {
+            formattedString = "(" + strippedValue.substringToIndex(3) + ") " + strippedValue.substringWithRange(NSMakeRange(3, 3)) + "-" + strippedValue.substringWithRange(NSMakeRange(6, 4)) + " x" + strippedValue.substringFromIndex(10)
         }
         
         self.textField.text = formattedString
