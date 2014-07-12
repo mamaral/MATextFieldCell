@@ -181,7 +181,7 @@ static CGFloat const kToolbarHeight = 50.0;
         // we want to flag that we should attempt to format the phone number as long as they are adding characters...
         // if they are deleting characters ignore it and don't attempt to format
         case MATextFieldTypePhone: {
-            _shouldAttemptFormat = resultString.length > string.length;
+            _shouldAttemptFormat = resultString.length > self.textField.text.length;
             return YES;
         }
          
@@ -229,7 +229,7 @@ static CGFloat const kToolbarHeight = 50.0;
         formattedString = [NSString stringWithFormat:@"(%@) %@-%@", [strippedValue substringToIndex:3], [strippedValue substringFromIndex:3], [strippedValue substringFromIndex:6]];
     }
     else if (strippedValue.length >= 11) {
-        formattedString = [NSString stringWithFormat:@"(%@) %@-%@ x%@", [strippedValue substringToIndex:3], [strippedValue substringFromIndex:3], [strippedValue substringWithRange:NSMakeRange(6, 4)], [strippedValue substringFromIndex:10]];
+        formattedString = [NSString stringWithFormat:@"(%@) %@-%@ x%@", [strippedValue substringToIndex:3], [strippedValue substringWithRange:NSMakeRange(3, 3)], [strippedValue substringWithRange:NSMakeRange(6, 4)], [strippedValue substringFromIndex:10]];
     }
     
     self.textField.text = formattedString;
