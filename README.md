@@ -42,7 +42,8 @@ phoneCell.actionBlock = {
 **Objective-C**
 
 ```js
-_firstNameCell = [[MATextFieldCell alloc] initWithFieldType:MATextFieldTypeName action:MATextFieldActionTypeNext actionHandler:^{
+    // these instance vars declared in the header
+    _firstNameCell = [[MATextFieldCell alloc] initWithFieldType:MATextFieldTypeName action:MATextFieldActionTypeNext actionHandler:^{
         [_lastNameCell.textField becomeFirstResponder];
     }];
     _firstNameCell.textField.placeholder = @"First name";
