@@ -8,27 +8,6 @@
 
 #import "MATextFieldCell.h"
 
-enum MATextFieldType : NSInteger {
-    MATextFieldTypeDefault = 0,
-    MATextFieldTypeName,
-    MATextFieldTypePhone,
-    MATextFieldTypeEmail,
-    MATextFieldTypeAddress,
-    MATextFieldTypeStateAbbr,
-    MATextFieldTypeZIP,
-    MATextFieldTypeNumber,
-    MATextFieldTypeDecimal,
-    MATextFieldTypePassword,
-    MATextFieldTypeURL,
-    MATextFieldTypeNonEditable
-};
-
-enum MATextFieldActionType: NSInteger {
-    MATextFieldActionTypeNone = 0,
-    MATextFieldActionTypeNext,
-    MATextFieldActionTypeDone
-};
-
 static NSString * const kNextButtonText = @"Next";
 static NSString * const kDoneButtonText = @"Done";
 
@@ -56,8 +35,8 @@ static CGFloat const kToolbarHeight = 50.0;
 #pragma mark - Text field configuration
 
 - (void)configureTextField {
+    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(kTextFieldHorizontalPadding, kTextFieldVerticalPadding, CGRectGetWidth(self.contentView.frame) - 2 * kTextFieldHorizontalPadding, CGRectGetHeight(self.contentView.frame) - (2 * kTextFieldVerticalPadding))];
     self.textField.delegate = self;
-    self.textField.frame = CGRectMake(kTextFieldHorizontalPadding, kTextFieldVerticalPadding, CGRectGetWidth(self.contentView.frame) - 2 * kTextFieldHorizontalPadding, CGRectGetHeight(self.contentView.frame) - (2 * kTextFieldVerticalPadding));
     self.textField.autoresizingMask = UIViewAutoresizingFlexibleHeight + UIViewAutoresizingFlexibleWidth;
     [self.contentView addSubview:self.textField];
     
@@ -72,54 +51,66 @@ static CGFloat const kToolbarHeight = 50.0;
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
             self.textField.autocorrectionType = UITextAutocorrectionTypeYes;
             self.textField.keyboardType = UIKeyboardTypeDefault;
+            break;
         case MATextFieldTypeName:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeDefault;
+            break;
         case MATextFieldTypePhone:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeNumberPad;
             [self.textField addTarget:self action:@selector(formatPhoneNumber) forControlEvents:UIControlEventEditingChanged];
             requiresToolbar = YES;
+            break;
         case MATextFieldTypeEmail:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeEmailAddress;
+            break;
         case MATextFieldTypeAddress:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
             self.textField.autocorrectionType = UITextAutocorrectionTypeYes;
             self.textField.keyboardType = UIKeyboardTypeDefault;
+            break;
         case MATextFieldTypeStateAbbr:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeDefault;
+            break;
         case MATextFieldTypeZIP:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeNumberPad;
             requiresToolbar = YES;
+            break;
         case MATextFieldTypeNumber:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeNumberPad;
             requiresToolbar = YES;
+            break;
         case MATextFieldTypeDecimal:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeDecimalPad;
             requiresToolbar = YES;
+            break;
         case MATextFieldTypePassword:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeDefault;
             self.textField.secureTextEntry = YES;
+            break;
         case MATextFieldTypeURL:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.keyboardType = UIKeyboardTypeURL;
+            break;
         case MATextFieldTypeNonEditable:
             self.textField.enabled = NO;
+            break;
     }
     
     // if any of the fields require a toolbar, set up the toolbar with the appropriate title,
@@ -127,6 +118,7 @@ static CGFloat const kToolbarHeight = 50.0;
     switch (_action) {
         case MATextFieldActionTypeNone:
             self.textField.returnKeyType = UIReturnKeyDefault;
+            break;
         case MATextFieldActionTypeNext:
             if (requiresToolbar) {
                 [self setupToolbarWithButtonTitle:kNextButtonText];
@@ -134,6 +126,7 @@ static CGFloat const kToolbarHeight = 50.0;
             else {
                 self.textField.returnKeyType = UIReturnKeyNext;
             }
+            break;
         case MATextFieldActionTypeDone:
             if (requiresToolbar) {
                 [self setupToolbarWithButtonTitle:kDoneButtonText];
@@ -141,6 +134,7 @@ static CGFloat const kToolbarHeight = 50.0;
             else {
                 self.textField.returnKeyType = UIReturnKeyDone;
             }
+            break;
     }
 }
 

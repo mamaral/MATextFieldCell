@@ -8,6 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+enum MATextFieldType : NSInteger {
+    MATextFieldTypeDefault = 0,
+    MATextFieldTypeName,
+    MATextFieldTypePhone,
+    MATextFieldTypeEmail,
+    MATextFieldTypeAddress,
+    MATextFieldTypeStateAbbr,
+    MATextFieldTypeZIP,
+    MATextFieldTypeNumber,
+    MATextFieldTypeDecimal,
+    MATextFieldTypePassword,
+    MATextFieldTypeURL,
+    MATextFieldTypeNonEditable
+};
+
+enum MATextFieldActionType: NSInteger {
+    MATextFieldActionTypeNone = 0,
+    MATextFieldActionTypeNext,
+    MATextFieldActionTypeDone
+};
+
 @interface MATextFieldCell : UITableViewCell <UITextFieldDelegate> {
     NSInteger _type;
     NSInteger _action;

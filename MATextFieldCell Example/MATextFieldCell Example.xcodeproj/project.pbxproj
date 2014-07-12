@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2785519F1970FB07006F00DB /* ExampleObjCFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2785519E1970FB07006F00DB /* ExampleObjCFormTableViewController.m */; };
 		27961C14194BF68F0098D263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27961C13194BF68F0098D263 /* AppDelegate.swift */; };
 		27961C16194BF6900098D263 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27961C15194BF6900098D263 /* Images.xcassets */; };
 		27961C22194BF6900098D263 /* MATextFieldCell_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27961C21194BF6900098D263 /* MATextFieldCell_ExampleTests.swift */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2785519D1970FB07006F00DB /* ExampleObjCFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleObjCFormTableViewController.h; sourceTree = "<group>"; };
+		2785519E1970FB07006F00DB /* ExampleObjCFormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleObjCFormTableViewController.m; sourceTree = "<group>"; };
 		27961C0E194BF68F0098D263 /* MATextFieldCell Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MATextFieldCell Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27961C12194BF68F0098D263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27961C13194BF68F0098D263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				279E9C71194C8CAA00B6F77C /* ShortFormExampleTableViewController.swift */,
 				279E9C73194C8DA300B6F77C /* NumericFormExampleTableViewController.swift */,
 				27961C2B194BF6B70098D263 /* ExampleFormTableViewController.swift */,
+				2785519D1970FB07006F00DB /* ExampleObjCFormTableViewController.h */,
+				2785519E1970FB07006F00DB /* ExampleObjCFormTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				279E9C70194C883700B6F77C /* OptionsViewController.swift in Sources */,
 				27961C14194BF68F0098D263 /* AppDelegate.swift in Sources */,
 				27961C2E194BF6CE0098D263 /* MATextFieldCell.swift in Sources */,
+				2785519F1970FB07006F00DB /* ExampleObjCFormTableViewController.m in Sources */,
 				279E9C74194C8DA300B6F77C /* NumericFormExampleTableViewController.swift in Sources */,
 				279E9C72194C8CAA00B6F77C /* ShortFormExampleTableViewController.swift in Sources */,
 				27BB09751970EDE6002B5345 /* MATextFieldCell.m in Sources */,
