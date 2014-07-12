@@ -85,10 +85,10 @@
     }];
     _ZIPCell.textField.placeholder = @"ZIP";
     
-    _nonEditableCell = [[MATextFieldCell alloc] initWithFieldType:MATextFieldTypeNonEditable action:nil actionHandler:nil];
+    _nonEditableCell = [[MATextFieldCell alloc] initWithFieldType:MATextFieldTypeNonEditable action:MATextFieldActionTypeNone actionHandler:nil];
     _nonEditableCell.textField.placeholder = @"Non-editable content";
     
-    _optionalCell = [[MATextFieldCell alloc] initWithFieldType:nil action:nil actionHandler:nil];
+    _optionalCell = [[MATextFieldCell alloc] initWithFieldType:MATextFieldTypeDefault action:MATextFieldActionTypeNone actionHandler:nil];
     _optionalCell.textField.placeholder = @"Additional info (optional)";
     
     NSArray *firstSection = @[_firstNameCell, _lastNameCell, _phoneCell, _emailCell, _websiteCell, _passwordCell];
