@@ -53,8 +53,8 @@ phoneCell.actionBlock = {
     }];
     _lastNameCell.textField.placeholder = @"Last name";
     
-    _phoneCell = [[MATextFieldCell alloc] initWithFieldType:MATextFieldTypePhone action:MATextFieldActionTypeNext actionHandler:^{
-        [_emailCell.textField becomeFirstResponder];
+    _phoneCell = [[MATextFieldCell alloc] initWithFieldType:MATextFieldTypePhone action:MATextFieldActionTypeDone actionHandler:^{
+        [_phoneCell.textField resignFirstResponder];
     }];
     _phoneCell.textField.placeholder = @"Phone";
 ```
