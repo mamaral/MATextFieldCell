@@ -30,8 +30,8 @@ enum MATextFieldActionType: NSUInteger {
 };
 
 @interface MATextFieldCell : UITableViewCell <UITextFieldDelegate> {
-    NSInteger _type;
-    NSInteger _action;
+    NSUInteger _type;
+    NSUInteger _action;
     BOOL _shouldAttemptFormat;
     void (^_actionHandler)(void);
 }
