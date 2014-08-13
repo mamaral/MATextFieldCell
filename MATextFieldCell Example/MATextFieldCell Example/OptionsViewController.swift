@@ -12,11 +12,15 @@ class OptionsViewController: UITableViewController {
     let swiftOptions = ["Short Form Example", "Numeric Example", "Full Example"]
     let objCOptions = ["Objective-C Full Example"]
 
-    init() {
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
+    
+    override init() {
         super.init(style: .Grouped)
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 

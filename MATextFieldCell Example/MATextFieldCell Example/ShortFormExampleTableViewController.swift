@@ -14,11 +14,15 @@ class ShortFormExampleTableViewController: UITableViewController {
     let phoneCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.Phone, action: MATextFieldActionType.Done)
     var cells = []
     
-    init(style: UITableViewStyle) {
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
+    
+    override init(style: UITableViewStyle) {
         super.init(style: style)
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     

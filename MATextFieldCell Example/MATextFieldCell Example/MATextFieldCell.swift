@@ -25,10 +25,14 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
     let action: MATextFieldActionType
     var shouldAttemptFormat: Bool = true
 
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
+    
     init(type: MATextFieldType?, action: MATextFieldActionType?) {
         // if the optional type and action enums were provided, set them
-        self.type = type ? type! : .Default
-        self.action = action ? action! : .None
+        self.type = type != nil ? type! : .Default
+        self.action = action != nil ? action! : .None
         
         super.init(style: .Default, reuseIdentifier: nil)
         
@@ -156,19 +160,19 @@ class MATextFieldCell: UITableViewCell, UITextFieldDelegate {
         switch (self.type) {
         // the state abbreviation cell should only allow two characeters
         case .StateAbbr:
-            let resultString: String = textField.text.bridgeToObjectiveC().stringByReplacingCharactersInRange(range, withString:string)
+            let resultString: String = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString:string)
             return countElements(resultString) < 3
             
         // the zip cell should only allow 5 characters - TODO: allow for hyphenated zips
         case .ZIP:
-            let resultString: String = textField.text.bridgeToObjectiveC().stringByReplacingCharactersInRange(range, withString:string)
+            let resultString: String = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString:string)
             return countElements(resultString) < 6
             
         // the phone cell should only allow up to 15 characters, and we want to flag that we should
         // attempt to format the phone number as long as they are adding characters... if they are
         // deleting characters ignore it and don't attempt to format - TODO: allow for prepended '1' and extentions
         case .Phone:
-            let resultString: String = textField.text.bridgeToObjectiveC().stringByReplacingCharactersInRange(range, withString:string)
+            let resultString: String = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString:string)
             let oldString: String = self.textField.text
             let oldCount = countElements(oldString)
             let newCount = countElements(resultString)

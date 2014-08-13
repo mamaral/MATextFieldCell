@@ -21,16 +21,20 @@ class ExampleFormTableViewController: UITableViewController {
     let zipCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.ZIP, action: MATextFieldActionType.Done)
     let blankCell: MATextFieldCell = MATextFieldCell(type: nil, action: nil)
     let nonEditableCell: MATextFieldCell = MATextFieldCell(type: MATextFieldType.NonEditable, action: nil)
-    var sections: MATextFieldCell[][] = [] // an array of MATextFieldCell arrays
-    var firstSectionCells: MATextFieldCell[] = [] // an array of the MATextFieldCells for the first section
-    var secondSectionCells: MATextFieldCell[] = []
-    var thirdSectionCells: MATextFieldCell[] = []
+    var sections = [] // an array of MATextFieldCell arrays
+    var firstSectionCells: [MATextFieldCell] = [] // an array of the MATextFieldCells for the first section
+    var secondSectionCells: [MATextFieldCell] = []
+    var thirdSectionCells: [MATextFieldCell] = []
     
-    init(style: UITableViewStyle) {
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
+    
+    override init(style: UITableViewStyle) {
         super.init(style: style)
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -128,8 +132,8 @@ class ExampleFormTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-        let cellsForSection = sections[indexPath!.section]
-        return cellsForSection[indexPath!.row]
+        let cellsForSection: AnyObject! = sections[indexPath!.section]
+        return cellsForSection[indexPath!.row] as MATextFieldCell
     }
 
 }
