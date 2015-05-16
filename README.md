@@ -1,7 +1,7 @@
 MATextFieldCell
 ==================
 
-NOTE - This repository will likely not be updated as development on this clas has now become a part of the MAFormViewController project - https://github.com/mamaral/MAFormViewController. For the most up to date implementation, see that repo.
+NOTE - This repository will likely not be updated as development on this class has now become a part of the MAFormViewController project - https://github.com/mamaral/MAFormViewController. For the most up to date implementation, see that repo.
 ----
 
 MATextFieldCell is a drop-in subclass of UITableViewCell, written in both Objective-C and Swift, used for drastically streamlining UITableView-based form creation. Harnessing the power and convenience of swift closures and Objective-C blocks, and coming out-of-the-box with a handful of the most common form-field types, MATextFieldCells allow for quick and easy customization of everything from navigation from field to field to maintaining proper data domains and formats. It is carefully designed for developer ease-of-use, abstracting away all of the common UITextFieldDelegate protocol code, UIKeyboard return key types, auto-capitilization/correction, and data validation/formatting, so forms can be built and customized fast and with less code.
